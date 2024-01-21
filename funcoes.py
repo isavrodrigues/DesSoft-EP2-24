@@ -31,35 +31,3 @@ def preenche_frota(dados_de_posicionamento,nome_navio,frota):
 
     return frota
 
-def faz_jogada(tabuleiro,linha,coluna):
-    if tabuleiro[linha][coluna]==1:
-        tabuleiro[linha][coluna]='X'
-    elif tabuleiro[linha][coluna]==0:
-        tabuleiro[linha][coluna]='-'
-    return tabuleiro    
-
-def posiciona_frota(frota):
-    tabuleiro = [[0 for _ in range(10)] for _ in range(10)]
-    for navio in frota:
-        for posicao in navio['posicoes']:
-            linha, coluna = posicao
-            tabuleiro[linha][coluna] = 1
-
-    return tabuleiro
-
-
-def afundados(frota, tabuleiro):
-    contador_afundados = 0
-
-    for navio in frota:
-        afundado = True 
-        for posicao in navio['posicoes']:
-            linha, coluna = posicao
-            if tabuleiro[linha][coluna] != 'X':
-                afundado = False 
-                break
-
-        if afundado:
-            contador_afundados += 1
-
-    return contador_afundados
