@@ -19,3 +19,14 @@ def define_posicoes(dados_de_posicionamento):
             posicoes.append([linha, coluna+i]) 
 
     return posicoes
+
+def preenche_frota(dados_de_posicionamento,nome_navio,frota):
+    posicoes = define_posicoes(dados_de_posicionamento)
+    dados_frota = {}
+    dados_frota['tipo'] = nome_navio
+    dados_frota['posicoes'] = posicoes
+
+    #adicionando o dicionario criado na lista frota
+    frota.append(dados_frota)
+
+    return frota
