@@ -29,6 +29,7 @@ def preenche_frota(dados_de_posicionamento,nome_navio,frota):
     #adicionando o dicionario criado na lista frota
     frota.append(dados_frota)
 
+
     return frota
 
 def faz_jogada(tabuleiro,linha,coluna):
@@ -38,3 +39,5 @@ def faz_jogada(tabuleiro,linha,coluna):
         tabuleiro[linha][coluna]='-'
     return tabuleiro    
 
+
+   
