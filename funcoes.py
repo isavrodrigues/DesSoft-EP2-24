@@ -65,3 +65,20 @@ def afundados(frota, tabuleiro):
 
     return contador_afundados
 
+def posicao_valida(dados_de_posicionamento,frota):
+    posicao_disponivel = define_posicoes(dados_de_posicionamento)
+
+    #se a frota estiver fazia
+    if frota == []:
+        for posicao in posicao_disponivel:
+            if posicao[0] >= 10 or posicao[1]>= 10:
+                return False
+    
+    for navio in frota:
+        for pos_navio in navio['posicoes']:
+            if pos_navio in posicao_disponivel:
+                return False
+
+    return True
+
+
